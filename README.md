@@ -1,25 +1,17 @@
-TypeScript Webpack5 Tree Shaking Demo
+TypeScript Webpack5 React Tree Shaking Demo
 =======================================
 
-坑很多，需要满足以下几个条件：
-1. package.json中，`"type": "module"`表明这是一个module，webpack才会把它当成一个ESM，才支持shaking
-2. `tsconfig.json`中必须使用`"module": "ES2020" / "ESNext"`等，只有这样，
-   1. typescript生成的才是esm格式的代码，可以被shaking。如果使用`CommonJS`，则不可以
-   2. 这种模式下，`__dirname`等无法使用，需要使用`import.meta.url`等转换才行
-   3. `"moduleResolution": "node"`，否则webpack.config.ts内容报错
-   4. 此时`.ts`的webpack config不被支持，必须加上环境变量`NODE_OPTIONS="--loader ts-node/esm" webpack build`
-   5. `target`应该是`ES2017`或以上，这样才不会把`async/await`转成复杂的代码
-3. webpack设置，只有当`production`模式才能真正去除很多无用的东西；如果是development，则会显示在bundle中
+按照另一个 `typescript-webpack5-tree-shaking-demo`的做法，为了让typescript能将代码以module方式编译，我们需要做很多设置，
+而这些设置会让我们使用时（如webpack, cli）等带来很多麻烦
 
-另外：
-1. webpack的tree shaking是依赖于内部使用的terser插件起作用的，但我们可以通过传入自己的WebpackTerserPlugin进行显式设置
-   1. `mangle`的意思是把变量缩短，需要把它disable
-   2. 由于本demo重点是tree shaking，所以主要是看`unused`和`dead_code`两个设置
-   3. 如果把`compress`的`defaults`设为true，则最后会出来inline后最简单的代码
-2. terser支持`/*@__PURE__*/`等标注，不过我发现不用标也可以 
-3. 不需要babel-loader
-4. package.json不需要声明`sideEffects:false`
+所以在这个demo里，使用`@type/preset-typescript`可以忽略tsconfig.json，仅仅把type annotation去掉，所以不需要对tsconfig.json进行特殊设置。
 
+另外，在这个demo里尝试了：
+1. 以commonjs格式导入react
+2. 使用core-js进行polyfill
+3. src中代码使用ESM模式以方便tree shaking
+
+结果是可行的
 
 ```
 npm install
