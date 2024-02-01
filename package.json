@@ -1,33 +1,33 @@
 {
-    "scripts": {
-        "start": "webpack build && open dist/index.html"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.17.0",
-        "@babel/plugin-proposal-decorators": "^7.17.0",
-        "@babel/preset-env": "^7.16.11",
-        "@babel/preset-react": "^7.16.7",
-        "@babel/preset-typescript": "^7.16.7",
-        "@types/html-webpack-plugin": "^3.2.6",
-        "@types/jquery": "3.5.13",
-        "@types/lodash": "^4.14.178",
-        "@types/react": "^17.0.38",
-        "@types/react-dom": "^17.0.11",
-        "@types/webpack": "5.28.0",
-        "@types/webpack-bundle-analyzer": "^4.4.1",
-        "babel-loader": "^8.2.3",
-        "core-js": "^3.21.0",
-        "html-webpack-plugin": "^5.5.0",
-        "jquery": "^3.6.0",
-        "lodash": "^4.17.21",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "terser-webpack-plugin": "^5.3.0",
-        "ts-loader": "9.2.6",
-        "ts-node": "10.4.0",
-        "typescript": "4.5.5",
-        "webpack": "5.67.0",
-        "webpack-bundle-analyzer": "^4.5.0",
-        "webpack-cli": "4.9.2"
-    }
+  "scripts": {
+    "start": "webpack build && open dist/index.html"
+  },
+  "devDependencies": {
+    "@babel/core": "7.17.0",
+    "@babel/plugin-proposal-decorators": "7.17.0",
+    "@babel/preset-env": "7.16.11",
+    "@babel/preset-react": "7.16.7",
+    "@babel/preset-typescript": "7.16.7",
+    "@types/html-webpack-plugin": "3.2.6",
+    "@types/jquery": "3.5.13",
+    "@types/lodash": "4.14.178",
+    "@types/react": "17.0.38",
+    "@types/react-dom": "17.0.11",
+    "@types/webpack": "5.28.0",
+    "@types/webpack-bundle-analyzer": "4.4.1",
+    "babel-loader": "8.2.3",
+    "core-js": "3.21.0",
+    "html-webpack-plugin": "5.5.0",
+    "jquery": "3.6.0",
+    "lodash": "4.17.21",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "terser-webpack-plugin": "5.3.0",
+    "ts-loader": "9.2.6",
+    "ts-node": "10.4.0",
+    "typescript": "5.3.3",
+    "webpack": "5.67.0",
+    "webpack-bundle-analyzer": "4.5.0",
+    "webpack-cli": "4.9.2"
+  }
 }
